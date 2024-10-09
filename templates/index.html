@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Playlist Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Playlist Downloader</h1>
+        <form action="/download" method="post" enctype="multipart/form-data">
+            <label for="playlist_url">Playlist URL:</label>
+            <input type="text" id="playlist_url" name="playlist_url" required>
+
+            <label for="download_path">Download Path:</label>
+            <input type="text" id="download_path" name="download_path" placeholder="Enter a path or select a folder" required>
+            <input type="file" id="folder_input" name="folder_input" webkitdirectory directory />
+
+            <button type="submit">Download</button>
+        </form>
+    </div>
+</body>
+</html>
